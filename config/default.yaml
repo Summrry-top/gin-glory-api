@@ -1,0 +1,43 @@
+server:
+  install: false
+  app:
+    mode: release
+    port: 8080
+    author: summrry
+    git: https://github.com/summrry-top/gin-glory-api
+    version: 1.0.0
+  log:
+    path: ./logs #
+    level: debug
+    filePrefix: glory
+    fileFormat: 2006-01-02
+    outFormat: json
+    lumberJack:
+      maxsize: 1
+      maxBackups: 3
+      maxAge: 30
+      compress: false
+  mysql:
+    host: 127.0.0.1
+    port: 3306
+    dbName: glory
+    username: root
+    password: root
+    config: charset=utf8mb4&parseTime=True&loc=Local
+    maxIdleConns: 10
+    maxOpenConns: 100
+    tablePrefix: t_
+  redis:
+    addr: 127.0.0.1:6379
+    db: 0
+    password: ""
+  jwt:
+    key: summer
+    issuer: summrry
+    expire: 2h
+  smtp:
+    host: ""
+    port: ""
+    username: ""
+    nickname: ""
+    password: "" # 秘钥
